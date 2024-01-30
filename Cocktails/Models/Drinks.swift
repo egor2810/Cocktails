@@ -77,7 +77,6 @@ struct Ingredient: Decodable {
     }
     
     let strIngredient: String
-    
 }
 
 struct IngredientList: Decodable {
