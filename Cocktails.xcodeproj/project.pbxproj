@@ -13,6 +13,8 @@
 		F7C7405C2B69461900B949F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C7405A2B69461900B949F1 /* Main.storyboard */; };
 		F7C7405E2B69461A00B949F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7C7405D2B69461A00B949F1 /* Assets.xcassets */; };
 		F7C740612B69461A00B949F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7C7405F2B69461A00B949F1 /* LaunchScreen.storyboard */; };
+		F7C7406C2B694B4000B949F1 /* Drinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7406B2B694B4000B949F1 /* Drinks.swift */; };
+		F7C7406F2B69557E00B949F1 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C7406E2B69557E00B949F1 /* Links.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		F7C7405D2B69461A00B949F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7C740602B69461A00B949F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F7C740622B69461A00B949F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7C7406B2B694B4000B949F1 /* Drinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drinks.swift; sourceTree = "<group>"; };
+		F7C7406E2B69557E00B949F1 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,49 @@
 		F7C740532B69461900B949F1 /* Cocktails */ = {
 			isa = PBXGroup;
 			children = (
-				F7C740542B69461900B949F1 /* AppDelegate.swift */,
-				F7C740562B69461900B949F1 /* SceneDelegate.swift */,
-				F7C740582B69461900B949F1 /* ViewController.swift */,
-				F7C7405A2B69461900B949F1 /* Main.storyboard */,
+				F7C740682B6948DB00B949F1 /* App */,
+				F7C7406A2B69491D00B949F1 /* ViewControllers */,
+				F7C7406D2B694B4A00B949F1 /* Models */,
+				F7C740692B69490A00B949F1 /* Storyboards */,
 				F7C7405D2B69461A00B949F1 /* Assets.xcassets */,
-				F7C7405F2B69461A00B949F1 /* LaunchScreen.storyboard */,
-				F7C740622B69461A00B949F1 /* Info.plist */,
 			);
 			path = Cocktails;
+			sourceTree = "<group>";
+		};
+		F7C740682B6948DB00B949F1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F7C740542B69461900B949F1 /* AppDelegate.swift */,
+				F7C740562B69461900B949F1 /* SceneDelegate.swift */,
+				F7C740622B69461A00B949F1 /* Info.plist */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F7C740692B69490A00B949F1 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F7C7405A2B69461900B949F1 /* Main.storyboard */,
+				F7C7405F2B69461A00B949F1 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F7C7406A2B69491D00B949F1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F7C740582B69461900B949F1 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F7C7406D2B694B4A00B949F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F7C7406B2B694B4000B949F1 /* Drinks.swift */,
+				F7C7406E2B69557E00B949F1 /* Links.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +176,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7C7406F2B69557E00B949F1 /* Links.swift in Sources */,
 				F7C740592B69461900B949F1 /* ViewController.swift in Sources */,
 				F7C740552B69461900B949F1 /* AppDelegate.swift in Sources */,
+				F7C7406C2B694B4000B949F1 /* Drinks.swift in Sources */,
 				F7C740572B69461900B949F1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +334,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5HNRLGK7M5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Cocktails/Info.plist;
+				INFOPLIST_FILE = Cocktails/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -307,9 +347,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AbloginEgor.Cocktails;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -322,7 +366,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5HNRLGK7M5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Cocktails/Info.plist;
+				INFOPLIST_FILE = Cocktails/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -335,9 +379,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = AbloginEgor.Cocktails;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
