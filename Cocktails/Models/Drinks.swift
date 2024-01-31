@@ -7,17 +7,17 @@
 
 struct Drink: Decodable {
     enum DrinkCategory: String, Decodable {
-        case OrdinaryDrink = "Ordinary Drink"
-        case Cocktail
-        case Shake
-        case Other = "Other / Unknown"
-        case Cocoa
-        case Shot
-        case Coffee = "Coffee / Tea"
-        case Homemade = "Homemade Liqueur"
-        case Punch = "Punch / Party Drink"
-        case Beer
-        case Soft = "Soft Drink"
+        case ordinaryDrink = "Ordinary Drink"
+        case cocktail
+        case shake
+        case other = "Other / Unknown"
+        case cocoa
+        case shot
+        case coffee = "Coffee / Tea"
+        case homemade = "Homemade Liqueur"
+        case punch = "Punch / Party Drink"
+        case beer
+        case soft = "Soft Drink"
     }
     
     let idDrink: String
