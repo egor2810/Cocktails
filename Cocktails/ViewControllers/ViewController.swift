@@ -18,7 +18,7 @@ final class ViewController: UIViewController {
     
     private func fetchIngredients() {
         URLSession.shared.dataTask(
-            with: URL(string: Links.allIngredients.rawValue)!
+            with: Links.list(filter: .ingredients).url()
         ) { data, response, error in
             guard let data, let response else {
                 print(error?.localizedDescription ?? "No Error!")
@@ -38,7 +38,7 @@ final class ViewController: UIViewController {
     
     private func fetchCocktailsFrom(letter: String) {
         URLSession.shared.dataTask(
-            with: URL(string: Links.allCocktailsFromLetter.rawValue + letter)!
+            with: Links.search(letter: letter).url()
         ) { data, response, error in
             guard let data, let response else {
                 print(error?.localizedDescription ?? "No Error!")
