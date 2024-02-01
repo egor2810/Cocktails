@@ -8,23 +8,21 @@
 struct Drink: Decodable {
     enum DrinkCategory: String, Decodable {
         case ordinaryDrink = "Ordinary Drink"
-        case cocktail
-        case shake
+        case cocktail = "Cocktail"
+        case shake = "Shake"
         case other = "Other / Unknown"
-        case cocoa
-        case shot
+        case cocoa = "Cocoa"
+        case shot = "Shot"
         case coffee = "Coffee / Tea"
         case homemade = "Homemade Liqueur"
         case punch = "Punch / Party Drink"
-        case beer
+        case beer = "Beer"
         case soft = "Soft Drink"
     }
     
     let idDrink: String
     let strDrink: String
-
     let strCategory: DrinkCategory
-    
     let strAlcoholic: String
     let strGlass: String
     let strInstructions: String
@@ -33,7 +31,6 @@ struct Drink: Decodable {
     let strInstructionsFR: String?
     let strInstructionsIT: String?
     let strInstructionsZH: String?
-
     let strDrinkThumb: String
     let strIngredient1: String
     let strIngredient2: String?
