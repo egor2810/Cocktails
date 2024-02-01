@@ -24,7 +24,6 @@ final class Menu: UIViewController {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
-      //  fetchCocktailsFrom(letter: "a")
     }
     
     private func fetchIngredients() {
@@ -80,7 +79,7 @@ extension Menu: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "menuCell", for: indexPath)
         guard let menuCell = cell as? MenuCellView else { return UITableViewCell() }
         
-        menuCell.cocktailNameLabel.text = menu[indexPath.row].strDrink
+        menuCell.setupCell(menu[indexPath.row])
         return menuCell
     }
     

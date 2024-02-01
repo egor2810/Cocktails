@@ -36,28 +36,49 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="46" id="eTe-et-NQ4" customClass="MenuCellView" customModule="Cocktails" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="46"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuCell" rowHeight="133" id="eTe-et-NQ4" customClass="MenuCellView" customModule="Cocktails" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="133"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eTe-et-NQ4" id="nrA-3z-qxQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="46"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="133"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLO-Co-uQE">
-                                                    <rect key="frame" x="20" y="11" width="353" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Bf-cj-gqp">
+                                                    <rect key="frame" x="20" y="11" width="353" height="111"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MIy-pW-5ct">
+                                                            <rect key="frame" x="0.0" y="0.0" width="101" height="100"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="100" id="pW8-kj-rwy"/>
+                                                                <constraint firstAttribute="width" secondItem="MIy-pW-5ct" secondAttribute="height" multiplier="1:1" constant="1" id="vyl-9j-hcd"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLO-Co-uQE">
+                                                            <rect key="frame" x="111" y="0.0" width="242" height="20.333333333333332"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Sw0-CE-5up">
+                                                    <rect key="frame" x="20" y="11" width="101" height="100"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="oLO-Co-uQE" secondAttribute="bottom" id="C3i-Nx-xy8"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="oLO-Co-uQE" secondAttribute="trailing" id="O05-1p-KzO"/>
-                                                <constraint firstItem="oLO-Co-uQE" firstAttribute="leading" secondItem="nrA-3z-qxQ" secondAttribute="leadingMargin" id="ge6-hp-xfs"/>
-                                                <constraint firstItem="oLO-Co-uQE" firstAttribute="top" secondItem="nrA-3z-qxQ" secondAttribute="topMargin" id="q4Y-eY-Rfr"/>
+                                                <constraint firstItem="7Bf-cj-gqp" firstAttribute="leading" secondItem="nrA-3z-qxQ" secondAttribute="leadingMargin" id="7lh-NS-t58"/>
+                                                <constraint firstItem="7Bf-cj-gqp" firstAttribute="top" secondItem="nrA-3z-qxQ" secondAttribute="topMargin" id="Twn-bC-r6p"/>
+                                                <constraint firstItem="Sw0-CE-5up" firstAttribute="leading" secondItem="MIy-pW-5ct" secondAttribute="leading" id="ZSN-nY-1dP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="7Bf-cj-gqp" secondAttribute="bottom" id="Zl1-Gk-EGf"/>
+                                                <constraint firstItem="Sw0-CE-5up" firstAttribute="bottom" secondItem="MIy-pW-5ct" secondAttribute="bottom" id="dvX-M1-WvC"/>
+                                                <constraint firstItem="Sw0-CE-5up" firstAttribute="top" secondItem="MIy-pW-5ct" secondAttribute="top" id="hap-LL-Mjs"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="7Bf-cj-gqp" secondAttribute="trailing" id="jDG-rc-loq"/>
+                                                <constraint firstItem="Sw0-CE-5up" firstAttribute="trailing" secondItem="MIy-pW-5ct" secondAttribute="trailing" id="lKM-6b-fiq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="Sw0-CE-5up" id="xZi-PC-43C"/>
+                                            <outlet property="cocktailImage" destination="MIy-pW-5ct" id="Tfy-Dp-NjZ"/>
                                             <outlet property="cocktailNameLabel" destination="oLO-Co-uQE" id="lJA-DR-eDS"/>
                                         </connections>
                                     </tableViewCell>
