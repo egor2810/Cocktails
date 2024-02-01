@@ -69,6 +69,15 @@ final class Menu: UIViewController {
                 }
             }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cocktailVC = segue.destination as? CocktailViewController
+        let cell = sender as? MenuCellView
+        guard let cell else { return }
+        
+        cocktailVC?.drink = cell.cellDrink
+        cocktailVC?.drinkImage = cell.cocktailImage.image
+    }
 }
 
 // MARK: - UITableViewDataSource

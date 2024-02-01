@@ -8,13 +8,16 @@
 import UIKit
 import Kingfisher
 
-class MenuCellView: UITableViewCell {
+final class MenuCellView: UITableViewCell {
     
     @IBOutlet weak var cocktailImage: UIImageView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var cocktailNameLabel: UILabel!
     
+    var cellDrink: Drink? = nil
+    
     func setupCell(_ drink: Drink) {
+        cellDrink = drink
         cocktailNameLabel.text = drink.strDrink
         let url = URL(string: drink.strDrinkThumb)
         cocktailImage.kf.setImage(with: url)

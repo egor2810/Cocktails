@@ -80,6 +80,7 @@
                                             <outlet property="activityIndicator" destination="Sw0-CE-5up" id="xZi-PC-43C"/>
                                             <outlet property="cocktailImage" destination="MIy-pW-5ct" id="Tfy-Dp-NjZ"/>
                                             <outlet property="cocktailNameLabel" destination="oLO-Co-uQE" id="lJA-DR-eDS"/>
+                                            <segue destination="EJE-tM-zs4" kind="presentation" id="Z41-ig-NqN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -111,6 +112,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-55.633802816901408"/>
+        </scene>
+        <!--Cocktail View Controller-->
+        <scene sceneID="WT4-tG-0Sd">
+            <objects>
+                <viewController id="EJE-tM-zs4" customClass="CocktailViewController" customModule="Cocktails" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pi5-Kd-xGC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q6e-sp-CR6">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="393"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="q6e-sp-CR6" secondAttribute="height" multiplier="1:1" id="YMi-Jz-PfX"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2Lw-GZ-vbx">
+                                <rect key="frame" x="16" y="413" width="361" height="94"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBz-0f-tzD">
+                                        <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="iXM-GR-FBN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvg-Eh-ec4">
+                                        <rect key="frame" x="0.0" y="70" width="361" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dDK-V5-DVP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dDK-V5-DVP" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2Lw-GZ-vbx" secondAttribute="bottom" constant="20" id="2Ng-jb-FBp"/>
+                            <constraint firstItem="q6e-sp-CR6" firstAttribute="leading" secondItem="Pi5-Kd-xGC" secondAttribute="leading" id="AAD-cD-P9d"/>
+                            <constraint firstItem="q6e-sp-CR6" firstAttribute="centerX" secondItem="Pi5-Kd-xGC" secondAttribute="centerX" id="EiS-QU-9sc"/>
+                            <constraint firstItem="2Lw-GZ-vbx" firstAttribute="leading" secondItem="dDK-V5-DVP" secondAttribute="leading" constant="16" id="PPS-oF-K8u"/>
+                            <constraint firstItem="dDK-V5-DVP" firstAttribute="trailing" secondItem="2Lw-GZ-vbx" secondAttribute="trailing" constant="16" id="a9J-sM-pqS"/>
+                            <constraint firstItem="2Lw-GZ-vbx" firstAttribute="top" secondItem="q6e-sp-CR6" secondAttribute="bottom" constant="20" id="f8P-P4-4Ou"/>
+                            <constraint firstAttribute="trailing" secondItem="q6e-sp-CR6" secondAttribute="trailing" id="hAH-CK-64W"/>
+                            <constraint firstItem="q6e-sp-CR6" firstAttribute="top" secondItem="dDK-V5-DVP" secondAttribute="top" id="vbI-Wh-DTa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cocktailImage" destination="q6e-sp-CR6" id="noR-zg-vjn"/>
+                        <outlet property="cocktailMakingInfo" destination="Lvg-Eh-ec4" id="Ffz-gY-IGY"/>
+                        <outlet property="cocktailName" destination="NBz-0f-tzD" id="Ym7-cY-0v2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sut-eb-xE7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1035.8778625954199" y="-56.338028169014088"/>
         </scene>
     </scenes>
     <resources>

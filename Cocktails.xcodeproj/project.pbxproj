@@ -18,6 +18,7 @@
 		F7C740712B6C10A400B949F1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C740702B6C10A400B949F1 /* NetworkManager.swift */; };
 		F7E24DBC2B6C2CDF00A06B44 /* MenuCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E24DBB2B6C2CDF00A06B44 /* MenuCellView.swift */; };
 		F7E24DBF2B6C4EEC00A06B44 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F7E24DBE2B6C4EEC00A06B44 /* Kingfisher */; };
+		F7E24DC12B6C520600A06B44 /* CocktailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E24DC02B6C520600A06B44 /* CocktailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		F7C7406E2B69557E00B949F1 /* Links.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
 		F7C740702B6C10A400B949F1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F7E24DBB2B6C2CDF00A06B44 /* MenuCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCellView.swift; sourceTree = "<group>"; };
+		F7E24DC02B6C520600A06B44 /* CocktailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				F7C740582B69461900B949F1 /* Menu.swift */,
+				F7E24DC02B6C520600A06B44 /* CocktailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7E24DC12B6C520600A06B44 /* CocktailViewController.swift in Sources */,
 				F7C740712B6C10A400B949F1 /* NetworkManager.swift in Sources */,
 				F7C7406F2B69557E00B949F1 /* Links.swift in Sources */,
 				F7C740592B69461900B949F1 /* Menu.swift in Sources */,
