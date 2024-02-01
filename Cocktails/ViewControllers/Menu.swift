@@ -37,38 +37,40 @@ final class Menu: UIViewController {
                         }
                     case .failure(let failure):
                         print(failure)
-                    }
                 }
             }
-        
-        private func fetchCocktailsFrom(letter: String) {
-            networkManager.fetch(
-                Drinks.self,
-                from: Links.search(letter: letter).url()) { result in
-                    DispatchQueue.main.async { [unowned self] in
-                        switch result {
-                            case .success(let drinks):
-                                guard let drinksList = drinks.drinks else {
-                                    alphabet.remove(at: 0)
-                                    isLoadingMoreData = false
-                                    return
-                                }
-                                menu.append(contentsOf: drinksList)
-                                tableView.reloadData()
-                                activityIndicator.stopAnimating()
-                                alphabet.remove(at: 0)
-                                if alphabet.isEmpty {
-                                    tableView.tableFooterView?.isHidden = true
-                                }
-                            case .failure(let error):
-                                print(error)
-                        }
-                        isLoadingMoreData = false
-                    }
-                }
-        }
     }
     
+    private func fetchCocktailsFrom(letter: String) {
+        networkManager.fetch(
+            Drinks.self,
+            from: Links.search(letter: letter).url()) { result in
+                DispatchQueue.main.async { [unowned self] in
+                    switch result {
+                        case .success(let drinks):
+                            guard let drinksList = drinks.drinks else {
+                                alphabet.remove(at: 0)
+                                isLoadingMoreData = false
+                                return
+                            }
+                            
+                            menu.append(contentsOf: drinksList)
+                            tableView.reloadData()
+                            activityIndicator.stopAnimating()
+                            alphabet.remove(at: 0)
+                            
+                            if alphabet.isEmpty {
+                                tableView.tableFooterView?.isHidden = true
+                            }
+                        case .failure(let error):
+                            print(error)
+                    }
+                    isLoadingMoreData = false
+                }
+            }
+    }
+}
+
 // MARK: - UITableViewDataSource
 extension Menu: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,7 +89,7 @@ extension Menu: UITableViewDataSource {
         let lastSection = tableView.numberOfSections - 1
         let lastRow = tableView.numberOfRows(inSection: lastSection) - 1
         if indexPath.section ==  lastSection && indexPath.row == lastRow && !alphabet.isEmpty {
-           // print("this is the last cell")
+            
             let spinner = UIActivityIndicatorView(style: .large)
             spinner.startAnimating()
             spinner.frame = CGRect(
@@ -96,7 +98,7 @@ extension Menu: UITableViewDataSource {
                 width: tableView.bounds.width,
                 height: CGFloat(44)
             )
-
+            
             tableView.tableFooterView = spinner
             tableView.tableFooterView?.isHidden = false
         }
@@ -120,7 +122,6 @@ extension Menu: UITableViewDelegate {
             isLoadingMoreData = true
             
             guard let letter = alphabet.first else { return }
-            print(letter, isLoadingMoreData)
             fetchCocktailsFrom(letter: letter)
         }
     }

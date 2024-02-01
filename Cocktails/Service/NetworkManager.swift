@@ -12,11 +12,6 @@ enum NetworkError: Error {
     case decodingError
 }
 
-enum httpMethods: String {
-    case fetch = "GET"
-    case post = "POST"
-}
-
 final class NetworkManager {
     static let shared = NetworkManager()
     
