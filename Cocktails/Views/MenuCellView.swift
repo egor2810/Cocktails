@@ -28,15 +28,6 @@ final class MenuCellView: UITableViewCell {
                 .transition(.fade(2)),
                 // TODO: Кэширование оригинального изображения(пока рано)
                 //.cacheOriginalImage
-            ]) {
-            result in
-            switch result {
-            case .success(let value):
-                print("Изображение загружено: \(value.source.url?.absoluteString ?? "")")
-            case .failure(let error):
-                print("Ошибка загрузки: \(error.localizedDescription)")
-            }
-        }
-      
+            ])
     }
 }
