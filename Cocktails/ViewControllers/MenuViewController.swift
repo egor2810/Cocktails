@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class Menu: UIViewController {
+final class MenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -24,6 +24,7 @@ final class Menu: UIViewController {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
+        
     }
     
     private func fetchIngredients() {
@@ -81,7 +82,7 @@ final class Menu: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension Menu: UITableViewDataSource {
+extension MenuViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         menu.count
     }
@@ -115,7 +116,7 @@ extension Menu: UITableViewDataSource {
 }
 
 // MARK: - UITableViewDelegate
-extension Menu: UITableViewDelegate {
+extension MenuViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
