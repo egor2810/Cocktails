@@ -11,7 +11,6 @@ import Kingfisher
 final class MenuCellView: UITableViewCell {
     
     @IBOutlet weak var cocktailImage: UIImageView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var cocktailNameLabel: UILabel!
     
     var cellDrink: Drink? = nil
@@ -20,24 +19,24 @@ final class MenuCellView: UITableViewCell {
         cellDrink = drink
         cocktailNameLabel.text = drink.strDrink
         let url = URL(string: drink.strDrinkThumb)
-        cocktailImage.kf.setImage(with: url)
+     
+        // TODO: Добавить дефолтное изображение
+        cocktailImage.kf.setImage(
+            with: url,
+            placeholder: nil,
+            options: [
+                .transition(.fade(2)),
+                // TODO: Кэширование оригинального изображения(пока рано)
+                //.cacheOriginalImage
+            ]) {
+            result in
+            switch result {
+            case .success(let value):
+                print("Изображение загружено: \(value.source.url?.absoluteString ?? "")")
+            case .failure(let error):
+                print("Ошибка загрузки: \(error.localizedDescription)")
+            }
+        }
       
     }
-}
-
-extension MenuCellView: Indicator {
-    func startAnimatingView() {
-        activityIndicator.startAnimating()
-        activityIndicator.hidesWhenStopped = true
-    }
-    
-    func stopAnimatingView() {
-        activityIndicator.stopAnimating()
-    }
-    
-    var view: Kingfisher.IndicatorView {
-        activityIndicator
-    }
-    
-    
 }

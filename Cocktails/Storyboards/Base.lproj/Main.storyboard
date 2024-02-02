@@ -61,23 +61,15 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Sw0-CE-5up">
-                                                    <rect key="frame" x="20" y="11" width="101" height="100"/>
-                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="7Bf-cj-gqp" firstAttribute="leading" secondItem="nrA-3z-qxQ" secondAttribute="leadingMargin" id="7lh-NS-t58"/>
                                                 <constraint firstItem="7Bf-cj-gqp" firstAttribute="top" secondItem="nrA-3z-qxQ" secondAttribute="topMargin" id="Twn-bC-r6p"/>
-                                                <constraint firstItem="Sw0-CE-5up" firstAttribute="leading" secondItem="MIy-pW-5ct" secondAttribute="leading" id="ZSN-nY-1dP"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="7Bf-cj-gqp" secondAttribute="bottom" id="Zl1-Gk-EGf"/>
-                                                <constraint firstItem="Sw0-CE-5up" firstAttribute="bottom" secondItem="MIy-pW-5ct" secondAttribute="bottom" id="dvX-M1-WvC"/>
-                                                <constraint firstItem="Sw0-CE-5up" firstAttribute="top" secondItem="MIy-pW-5ct" secondAttribute="top" id="hap-LL-Mjs"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="7Bf-cj-gqp" secondAttribute="trailing" id="jDG-rc-loq"/>
-                                                <constraint firstItem="Sw0-CE-5up" firstAttribute="trailing" secondItem="MIy-pW-5ct" secondAttribute="trailing" id="lKM-6b-fiq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="activityIndicator" destination="Sw0-CE-5up" id="xZi-PC-43C"/>
                                             <outlet property="cocktailImage" destination="MIy-pW-5ct" id="Tfy-Dp-NjZ"/>
                                             <outlet property="cocktailNameLabel" destination="oLO-Co-uQE" id="lJA-DR-eDS"/>
                                             <segue destination="EJE-tM-zs4" kind="presentation" id="Z41-ig-NqN"/>
